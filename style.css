@@ -1,0 +1,519 @@
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(SpaceGrotesk-VariableFont_wght.ttf);
+  font-weight: 500;
+}
+
+:root {
+  /*Primary*/
+  --color-majorelle: hsl(249, 99%, 64%);
+  --color-indigo: hsl(278, 94%, 30%);
+  --color-red: hsl(0, 100%, 66%);
+
+  /*Neutral*/
+  --color-platinium: hsl(270, 3%, 87%);
+  --color-taupe-gray: hsl(279, 6%, 55%);
+  --color-dark-purple: hsl(278, 68%, 11%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "SpaceGrotesk", sans-serif;
+  font-weight: 500;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.card {
+  padding: 30rem;
+  min-height: inherit; /* Hérite la hauteur minimale de .main */
+  background-image: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.card__image-container {
+  background-image: url(images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  width: 40rem;
+
+  position: absolute;
+  left: 32rem;
+  top: 20rem;
+}
+
+.card__info {
+  margin: 5rem 0 2rem 0;
+  color: var(--color-white);
+
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height */
+  letter-spacing: 0.34rem;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__author,
+.card__date {
+  color: var(--color-white);
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card__background {
+  position: absolute;
+  left: 36rem;
+  top: 50rem;
+}
+
+/* FORM */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 52.5rem;
+}
+
+.form__input {
+  font-size: 1.8rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-taupe-gray);
+}
+
+.form__input:focus {
+  border: 2px solid var(--color-indigo);
+  outline: 0;
+  font-size: 1.8rem;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group-inputs,
+.form__group-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__group-inputs {
+  margin-top: 2rem;
+}
+
+#YY {
+  margin: 0 2.5rem;
+}
+
+#YY,
+#MM {
+  width: 15rem;
+}
+
+.form__btn-submit,
+.card-confirmation__button {
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+
+  margin-top: 2.5rem;
+  padding: 2rem;
+  border: 0;
+  outline: 0;
+  border-radius: 1rem;
+  background-color: var(--color-dark-purple);
+  color: var(--color-white);
+}
+
+.form__btn-submit:hover {
+  cursor: pointer;
+}
+
+/* SUCCESS */
+
+.card-confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-confirmation__icon {
+  width: 8rem;
+}
+
+.card-confirmation__title {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.34rem;
+  margin: 2.5rem 0;
+}
+
+.card-confirmation__description {
+  line-height: 2.3rem;
+  color: var(--color-taupe-gray);
+  margin-bottom: 2.5rem;
+}
+
+.card-confirmation__button {
+  width: 30rem;
+}
+
+.card-confirmation__button:hover {
+  cursor: pointer;
+}
+
+/*ERROR*/
+.form__card-number-error {
+  /* margin-top: 1rem; */
+  margin-bottom: 2.5rem;
+  color: var(--color-red);
+}
+.form__card-date-error {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.form__card-date-error-MMYY,
+.form__card-date-error-CVC {
+  color: var(--color-red);
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 1650px) {
+  .card__image-container,
+  .card__background {
+    left: 30rem;
+  }
+}
+
+@media only screen and (max-width: 1550px) {
+  .card__image-container,
+  .card__background {
+    left: 25rem;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .card {
+    padding: 28rem;
+  }
+  .card__image-container,
+  .card__background {
+    left: 20rem;
+  }
+}
+
+@media only screen and (max-width: 1380px) {
+  .card {
+    padding: 25rem;
+  }
+  .card__image-container,
+  .card__background {
+    left: 16rem;
+  }
+  #YY,
+  #MM {
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .card {
+    padding: 20rem;
+  }
+  .card__image-container,
+  .card__background {
+    left: 8rem;
+  }
+  #YY,
+  #MM {
+    width: 8rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  body {
+    min-height: 100%;
+  }
+  .main {
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  }
+  .card {
+    height: 30vh;
+    padding: 0;
+  }
+  .card__background {
+    top: 4rem;
+    left: 66rem;
+  }
+
+  .card__image-container {
+    top: 20rem;
+    left: 40rem;
+    z-index: 100;
+  }
+
+  .form-container {
+    margin-top: 25rem;
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .card__background {
+    top: 4rem;
+    left: 37rem;
+  }
+
+  .card__image-container {
+    top: 20rem;
+    left: 20rem;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  .card__background {
+    top: 4rem;
+    left: 25rem;
+  }
+
+  .card__image-container {
+    top: 20rem;
+    left: 8rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card__background {
+    top: 4rem;
+    left: 20rem;
+    width: 40rem;
+  }
+
+  .card__image-container {
+    top: 20rem;
+    left: 8rem;
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card__background {
+    top: 4rem;
+    left: 15rem;
+    width: 35rem;
+  }
+
+  .card__image-container {
+    top: 20rem;
+    left: 4rem;
+    width: 35rem;
+  }
+
+  .card__info {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .form-container {
+    margin-top: 10rem;
+  }
+  .form {
+    height: 45rem;
+  }
+  .card__background {
+    top: 5rem;
+    left: 12rem;
+    width: 30rem;
+  }
+
+  .card__image-container {
+    top: 12rem;
+    left: 4rem;
+    width: 30rem;
+  }
+
+  .card__info {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin: 2.5rem 0 1rem 0;
+  }
+
+  .card__author,
+  .card__date {
+    font-size: 1.2rem;
+  }
+
+  /* #card__name,
+  #card__number {
+    width: 30rem;
+  } */
+  #YY,
+  #MM {
+    width: 8rem;
+  }
+  #CVC {
+    width: 12rem;
+  }
+
+  .form__btn-submit {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .card__background {
+    top: 5rem;
+    left: 8rem;
+    width: 28rem;
+  }
+
+  .card__image-container {
+    top: 12.5rem;
+    left: 4rem;
+    width: 28rem;
+  }
+  .card__info {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    margin: 2.5rem 0 1rem 0;
+  }
+
+  .card__author,
+  .card__date {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .card__background {
+    top: 5rem;
+    left: 6rem;
+    width: 28rem;
+  }
+
+  .card__image-container {
+    top: 15rem;
+    left: 2rem;
+    width: 28rem;
+  }
+  .card__info {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    margin: 2.5rem 0 1rem 0;
+  }
+
+  .card__author,
+  .card__date {
+    font-size: 1rem;
+  }
+
+  .form-container {
+    margin-top: 12rem;
+  }
+
+  .form {
+    height: 40rem;
+  }
+
+  .form__label {
+    font-size: 1.1rem;
+  }
+  .form__input {
+    font-size: 1.4rem;
+  }
+
+  .form__btn-submit {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    padding: 1.5rem;
+  }
+
+  #YY {
+    margin: 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .card__background {
+    top: 5rem;
+    left: 6rem;
+    width: 25rem;
+  }
+
+  .card__image-container {
+    top: 15rem;
+    left: 2rem;
+    width: 25rem;
+  }
+  .card__info {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    margin: 2.5rem 0 1rem 0;
+  }
+}
+
+/*HIDDEN*/
+.hidden {
+  display: none;
+}
