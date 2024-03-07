@@ -106,3 +106,6 @@ btnConfirmation.addEventListener("click", function (e) {
   e.preventDefault();
   toggleFormAndConfirmationVisibility();
 });
+
+console.log(`Challenge by michelcwn front Frontend Mentor`);
+console.log(`https://github.com/michelcwn`);
